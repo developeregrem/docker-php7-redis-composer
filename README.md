@@ -1,8 +1,10 @@
 
 # docker-php7-redis-composer
 
-dockerfile with PHP 7.2-fpm-alpine, redis 4.2.0 and lates composer.
+dockerfile with PHP 7.3-fpm-alpine, phpredis 4.2.0 and lates composer.
 included PHP modules:
+
+Dockerfile: https://github.com/devoloperegrem/docker-php7-redis-composer
 
  - intl
  - xml
@@ -11,7 +13,7 @@ included PHP modules:
 
 ## supported tags
 
- - :lates for x64 architecture
+ - :lates for amd64 architecture
  - :armhf for arm
 
 ## docker-compose example

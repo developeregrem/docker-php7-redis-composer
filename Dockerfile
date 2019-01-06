@@ -1,5 +1,5 @@
 # docker-compose build
-FROM php:7.2-fpm-alpine
+FROM php:7.3-fpm-alpine
 
 ENV PHPREDIS_VERSION 4.2.0
 
