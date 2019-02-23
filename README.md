@@ -1,20 +1,23 @@
 
 # docker-php7-redis-composer
 
-dockerfile with PHP 7.3-fpm-alpine, phpredis 4.2.0 and lates composer.
-included PHP modules:
+This Docker image is based on [PHP 7.3-fpm-alpine](https://hub.docker.com/_/php/), [phpredis 4.2.0](https://github.com/phpredis/phpredis) and lates [composer](https://hub.docker.com/_/composer).
+This image can be used, for example, when you use compose to manage your php dependencies and you want to use redis as an in-memory data structure as a database cache or to store php sessions.
 
-Dockerfile: https://github.com/devoloperegrem/docker-php7-redis-composer
+## Included PHP modules
 
+ - gd
  - intl
  - xml
  - pdo_mysql
  - opcache
+ 
+Dockerfile: https://github.com/developeregrem/docker-php7-redis-composer
 
 ## supported tags
 
- - :lates for amd64 architecture
- - :armhf for arm
+ - `:lates` - 64 bit Intel/AMD (x86_64/amd64)
+ - `:armhf` - 32 bit ARM (ARMv7/armhf)
 
 ## docker-compose example
 
@@ -57,5 +60,27 @@ Dockerfile: https://github.com/devoloperegrem/docker-php7-redis-composer
             driver: bridge
     volumes:
         redis-vol:
+		
+## Volume structure
 
+ - `/var/www` - web accessible resources (php files)
+ - `/usr/local/etc/php` - custom php config file (see example [conf.ini](https://github.com/developeregrem/docker-php7-redis-composer/blob/master/conf/php/conf.ini))
+
+## Environment variables
+
+ - `TZ` - time zone e.g. "Europe/Berlin"
+ 
+ ## Run it
+ 
+ You can easily run the docker-compose example from above which includes all relevant images for a web stack (without database), containing the lates [ngnix](https://hub.docker.com/_/nginx) as web server, [redis](https://hub.docker.com/_/redis) as in-memory cache and this php image.
+ To run it 
+ - adjust the `volumes` paths from the example to your needs
+ - you can use the example php config file from here [conf.ini](https://github.com/developeregrem/docker-php7-redis-composer/blob/master/conf/php/conf.ini)
+ 
+ - `docker-compose up -d`
+ 
+ To install or update composer dependencies run e.g.:
+ 
+  - `docker-compose exec -u www-data php /bin/sh -c "composer update"`
+ 
 
