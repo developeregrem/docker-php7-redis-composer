@@ -16,7 +16,7 @@ Dockerfile: https://github.com/developeregrem/docker-php7-redis-composer
 
 ## supported tags
 
- - `:lates` - 64 bit Intel/AMD (x86_64/amd64)
+ - `:latest` - 64 bit Intel/AMD (x86_64/amd64)
  - `:armhf` - 32 bit ARM (ARMv7/armhf)
 
 ## docker-compose example
