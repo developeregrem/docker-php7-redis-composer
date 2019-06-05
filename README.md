@@ -60,6 +60,8 @@ Dockerfile: https://github.com/developeregrem/docker-php7-redis-composer
             driver: bridge
     volumes:
         redis-vol:
+	
+Also see my full web stack docker-compose example including ACME (letsencrypt) here: [acme-php-nginx-dockerized](https://github.com/developeregrem/acme-php-nginx-dockerized)
 		
 ## Volume structure
 
